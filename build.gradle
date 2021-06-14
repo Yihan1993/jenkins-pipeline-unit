@@ -46,9 +46,13 @@ sourceSets {
     }
 }
 
+
 test {
-	useJUnitPlatform()
-	testLogging {
-		events "passed", "skipped", "failed"
-	}
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        // print STDERR/STDOUT into console
+        outputs.upToDateWhen {false}
+        showStandardStreams = true
+    }
 }
